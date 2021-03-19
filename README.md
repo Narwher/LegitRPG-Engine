@@ -6,6 +6,14 @@ A simple turn-based RPG example engine written for GameMaker Studio 1.4.
 Aims to include most mechanics and tropes from console-based role-playing games.  
   
 ### You can test it out online [here!](http://legitvidya.com/games/LRPGE-html5/index.html)
+## Controls
+[Z] : Select/Skip 
+  
+[X] : Cancel
+  
+[Return] : Pause Game
+  
+[Arrow Keys] : Move/Navigate  
 
 # Screenshots
 ![town](https://github.com/Narwher/LegitRPG-Engine/blob/master/rpg-town.png?raw=true)
