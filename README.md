@@ -7,7 +7,7 @@ Aims to include most mechanics and tropes from console-based role-playing games.
   
 ### You can test it out online [here!](http://legitvidya.com/games/LRPGE-html5/index.html)
 ## Controls
-[Z] : Select/Skip 
+[Z] : Select/Interact/Skip 
   
 [X] : Cancel/Run (field)
   
