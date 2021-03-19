@@ -27,9 +27,9 @@ Aims to include most mechanics and tropes from console-based role-playing games.
 ## Implemented Features:
 * Basic field and town map
   * Run button
-* Moving NPCs with dialog
-* Treasure chests
-* Random enemy encounters
+  * Moving NPCs with dialog
+  * Treasure chests
+  * Random enemy encounters
 * Pause menu
   * Item usage
   * Item drop
@@ -57,11 +57,11 @@ Aims to include most mechanics and tropes from console-based role-playing games.
 * Bug fixes
 
 # Credits/Usage
-Written by Jay Harris (Narwher/LegitVidya) using graphical assets from Square-Enix's Final Fantasy series and Nintendo's Mother series. I do not claim ownership of any graphical assets.  
+Written by Jay Harris (Narwher/LegitVidya) and borrowing graphical assets from Square-Enix's Final Fantasy series and Nintendo's Mother series. I do not claim ownership of any graphical assets.  
   
 Thanks to [diest](https://michaelvandiest.tumblr.com/) for help with player naming code.
   
-This engine can be used by anyone for free to make their own games. You can modify it however you like, or use it as a way to learn how RPGs work (kinda). I do request, however, that you credit me and include a link to [LegitVidya.com](http://www.legitvidya.com) in your game's documentation should you use it. You may distribute games made with this engine for free - NOT for a price. Also, remember to use your own graphics as these are copyrighted assets as stated above.
+This engine can be used by anyone for free to make their own games. You can modify it however you like, or use it as a way to learn how RPGs work (kinda). I do request, however, that you credit me and include a link to [LegitVidya.com](http://www.legitvidya.com) in your game's documentation should you use it. You may distribute games made with this engine for free - NOT for profit. Also, remember to use your own graphics because these are borrowed assets as stated above.
 
 
 
