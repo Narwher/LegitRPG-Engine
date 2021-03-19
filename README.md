@@ -9,7 +9,7 @@ Aims to include most mechanics and tropes from console-based role-playing games.
 ## Controls
 [Z] : Select/Skip 
   
-[X] : Cancel
+[X] : Cancel/Run (field)
   
 [Return] : Pause Game
   
