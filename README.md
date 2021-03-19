@@ -45,6 +45,8 @@ Aims to include most mechanics and tropes from console-based role-playing games.
 * Cutscenes
 * Music/SFX (maybe, will borrow most likely)
 * Dungeon
+* In-code documentation/code cleanup
+* Bug fixes
 
 # Credits/Usage
 Written by Jay Harris (Narwher/LegitVidya) using graphical assets from Square-Enix's Final Fantasy series and Nintendo's Mother series. I do not claim ownership of any graphical assets.  
