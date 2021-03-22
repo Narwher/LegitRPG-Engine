@@ -98,6 +98,7 @@
       <object>objects\obj_chest</object>
     </objects>
     <objects name="System">
+      <object>objects\obj_shop</object>
       <object>objects\obj_menu</object>
       <object>objects\obj_message</object>
       <object>objects\obj_interact</object>
@@ -115,6 +116,7 @@
     <room>rooms\rm_field</room>
     <room>rooms\rm_battle</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_shop</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
