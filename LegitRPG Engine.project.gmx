@@ -73,6 +73,7 @@
       <script>scripts\saveGame.gml</script>
       <script>scripts\loadGame.gml</script>
       <script>scripts\drawMessage.gml</script>
+      <script>scripts\drawCutsceneMessage.gml</script>
       <script>scripts\drawBattleMessage.gml</script>
       <script>scripts\drawMenuMessage.gml</script>
     </scripts>
@@ -85,6 +86,7 @@
     <object>objects\obj_init</object>
     <objects name="Battle">
       <object>objects\obj_battlecontroller</object>
+      <object>objects\object22</object>
       <object>objects\obj_p1battle</object>
       <object>objects\obj_p2battle</object>
       <object>objects\obj_p3battle</object>
@@ -99,6 +101,7 @@
     </objects>
     <objects name="System">
       <object>objects\obj_shop</object>
+      <object>objects\obj_inn</object>
       <object>objects\obj_menu</object>
       <object>objects\obj_message</object>
       <object>objects\obj_interact</object>
@@ -106,6 +109,7 @@
       <object>objects\obj_npc_move</object>
       <object>objects\obj_name</object>
       <object>objects\obj_titleScreen</object>
+      <object>objects\obj_event</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -117,6 +121,7 @@
     <room>rooms\rm_battle</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_shop</room>
+    <room>rooms\rm_inn</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

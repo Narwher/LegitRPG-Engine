@@ -266,19 +266,23 @@ if a &amp;&amp; canMove &amp;&amp; menu == "main"{
         alarm[1] = 30;  
     }
 }else if a &amp;&amp; canMove &amp;&amp; menu == "buy"{
-    cursor_y = 84; 
-    lastMenu = "buy"
-    questionOption = 0;
-    menu = "question"
-    canMove = false;
-    alarm[0] = 5;
+    if global.item_price[myItem[buyOption]] != 0 {
+        cursor_y = 84; 
+        lastMenu = "buy"
+        questionOption = 0;
+        menu = "question"
+        canMove = false;
+        alarm[0] = 5;
+    }
 }else if a &amp;&amp; canMove &amp;&amp; menu == "sell"{
-    cursor_y = 84; 
-    lastMenu = "sell"
-    questionOption = 0;
-    menu = "question"
-    canMove = false;
-    alarm[0] = 5;
+    if global.item_price[global.item[sellOption+1]] != 0 {
+        cursor_y = 84; 
+        lastMenu = "sell"
+        questionOption = 0;
+        menu = "question"
+        canMove = false;
+        alarm[0] = 5;
+    }
 }else if a &amp;&amp; canMove &amp;&amp; menu == "question"{
     if questionOption = 0{
         cursor_y = 84; 

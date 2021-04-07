@@ -297,7 +297,12 @@ global.item_price[0] = 0
 global.item_canEquip[0] = false;
 global.item_equipType[0] = 0 //weapon type (int - head=1, armor=2, weapon=3, acc=4)
 global.item_useOnAlly[0] = false; // can use item on friend
-global.item_useOnEnemy[0] = false; // can use item on enemy in battle mide
+global.item_useOnEnemy[0] = false; // can use item on enemy in battle mode
+global.item_atk[0] = 0 //these values (for equip) are the stats of the equipment
+global.item_def[0] = 0
+global.item_spd[0] = 0
+global.item_res[0] = 0
+global.item_pow[0] = 0
 
 global.item_name[1] = "Potion"
 global.item_consumable[1] = true
@@ -307,6 +312,11 @@ global.item_canEquip[1] = false;
 global.item_equipType[1] = "" 
 global.item_useOnAlly[1] = true;
 global.item_useOnEnemy[1] = false;
+global.item_atk[1] = 0 
+global.item_def[1] = 0
+global.item_spd[1] = 0
+global.item_res[1] = 0
+global.item_pow[1] = 0
 
 global.item_name[2] = "Antidote"
 global.item_consumable[2] = true
@@ -316,6 +326,11 @@ global.item_canEquip[2] = false;
 global.item_equipType[2] = "" 
 global.item_useOnAlly[2] = true;
 global.item_useOnEnemy[2] = false;
+global.item_atk[2] = 0 
+global.item_def[2] = 0
+global.item_spd[2] = 0
+global.item_res[2] = 0
+global.item_pow[2] = 0
 
 global.item_name[3] = "Ball of Return"
 global.item_consumable[3] = true
@@ -325,6 +340,11 @@ global.item_canEquip[3] = false;
 global.item_equipType[3] = "" 
 global.item_useOnAlly[3] = true;
 global.item_useOnEnemy[3] = false;
+global.item_atk[3] = 0 
+global.item_def[3] = 0
+global.item_spd[3] = 0
+global.item_res[3] = 0
+global.item_pow[3] = 0
 
 global.item_name[4] = "Bomb"
 global.item_consumable[4] = true
@@ -334,6 +354,11 @@ global.item_canEquip[4] = false;
 global.item_equipType[1] = "" 
 global.item_useOnAlly[4] = false;
 global.item_useOnEnemy[4] = true;
+global.item_atk[4] = 0 
+global.item_def[4] = 0
+global.item_spd[4] = 0
+global.item_res[4] = 0
+global.item_pow[4] = 0
 
 global.item_name[5] = "Wood Spear"
 global.item_consumable[5] = false;
@@ -343,6 +368,11 @@ global.item_canEquip[5] = true;
 global.item_equipType[5] = 3 // 3=weapon
 global.item_useOnAlly[5] = false;
 global.item_useOnEnemy[5] = false;
+global.item_atk[5] = 2
+global.item_def[5] = 0
+global.item_spd[5] = 0
+global.item_res[5] = 0
+global.item_pow[5] = 0
 
 global.item_name[6] = "Iron Sabre"
 global.item_consumable[6] = false;
@@ -352,6 +382,11 @@ global.item_canEquip[6] = true;
 global.item_equipType[6] = 3 // 3=weapon
 global.item_useOnAlly[6] = false;
 global.item_useOnEnemy[6] = false;
+global.item_atk[6] = 5
+global.item_def[6] = 0
+global.item_spd[6] = 0
+global.item_res[6] = 0
+global.item_pow[6] = 0
 
 global.item_name[7] = "Elixir"
 global.item_consumable[7] = true;
@@ -361,6 +396,11 @@ global.item_canEquip[7] = false;
 global.item_equipType[7] = ""
 global.item_useOnAlly[7] = true;
 global.item_useOnEnemy[7] = false;
+global.item_atk[7] = 0 
+global.item_def[7] = 0
+global.item_spd[7] = 0
+global.item_res[7] = 0
+global.item_pow[7] = 0
 
 global.item_name[8] = "Cloth Hat"
 global.item_consumable[8] = false;
@@ -370,6 +410,11 @@ global.item_canEquip[8] = true;
 global.item_equipType[8] = 1 // head
 global.item_useOnAlly[8] = false;
 global.item_useOnEnemy[8] = false;
+global.item_atk[8] = 0 
+global.item_def[8] = 2
+global.item_spd[8] = 0
+global.item_res[8] = 0
+global.item_pow[8] = 0
 
 global.item_name[9] = "Wood Cane"
 global.item_consumable[9] = false;
@@ -379,6 +424,11 @@ global.item_canEquip[9] = true;
 global.item_equipType[9] = 3 // weapon
 global.item_useOnAlly[9] = false;
 global.item_useOnEnemy[9] = false;
+global.item_atk[9] = 0
+global.item_def[9] = 0
+global.item_spd[9] = 0
+global.item_res[9] = 0
+global.item_pow[9] = 3
 
 global.item_name[10] = "Chain Mail"
 global.item_consumable[10] = false;
@@ -388,6 +438,11 @@ global.item_canEquip[10] = true;
 global.item_equipType[10] = 2 // armor
 global.item_useOnAlly[10] = false;
 global.item_useOnEnemy[10] = false;
+global.item_atk[10] = 0 
+global.item_def[10] = 5
+global.item_spd[10] = 3
+global.item_res[10] = 0
+global.item_pow[10] = 0
 
 global.item_name[11] = "Mage's Robe"
 global.item_consumable[11] = false;
@@ -397,6 +452,11 @@ global.item_canEquip[11] = true;
 global.item_equipType[11] = 2 // armor
 global.item_useOnAlly[11] = false;
 global.item_useOnEnemy[11] = false;
+global.item_atk[11] = 0 
+global.item_def[11] = 3
+global.item_spd[11] = 0
+global.item_res[11] = 0
+global.item_pow[11] = 0
 
 global.item_name[12] = "GoldRing"
 global.item_consumable[12] = false;
@@ -406,6 +466,11 @@ global.item_canEquip[12] = true;
 global.item_equipType[12] = 4 // accessory
 global.item_useOnAlly[12] = false;
 global.item_useOnEnemy[12] = false;
+global.item_atk[12] = 0 
+global.item_def[12] = 5
+global.item_spd[12] = 0
+global.item_res[12] = 0
+global.item_pow[12] = 0
 </string>
           </argument>
         </arguments>

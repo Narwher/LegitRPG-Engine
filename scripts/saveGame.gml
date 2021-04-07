@@ -123,4 +123,3 @@ ini_write_real("Misc","direction",global.dir)
 ini_close();
 drawBattleMessage("Save Successful!")
 
-

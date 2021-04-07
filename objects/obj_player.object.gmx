@@ -499,6 +499,8 @@ move_outside_solid(direction,16)
             <kind>1</kind>
             <string>/// goto desired room
 room_goto(other.newRoom);
+global.dir = dir;
+global.field_room = room_get_name(room)
 global.player_x = other.target_x;
 global.player_y = other.target_y;
 

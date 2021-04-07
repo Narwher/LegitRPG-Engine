@@ -57,7 +57,7 @@ cooldown = text_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.gameMove = true;
+            <string>if !instance_exists(obj_event) global.gameMove = true;
 </string>
           </argument>
         </arguments>

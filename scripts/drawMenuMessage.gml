@@ -5,4 +5,3 @@ if !instance_exists(obj_message){
     writer.text = argument0;
 }
 
-

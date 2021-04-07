@@ -16,4 +16,3 @@ b       =   keyboard_check_pressed(ord('X')) || gamepad_button_check_pressed(0,g
 b_hold  =   keyboard_check(ord('X')) || gamepad_button_check(0,gp_face1);
 start   =   keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(0,gp_start);
 select  =   keyboard_check_pressed(vk_shift) || gamepad_button_check_pressed(0,gp_select);
-
