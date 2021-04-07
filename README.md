@@ -51,7 +51,6 @@ Aims to include most mechanics and tropes from console-based role-playing games.
   * Boss battle
   * Game Over screen
 * Cutscenes
-* Music/SFX (maybe, will borrow most likely)
 * Dungeon
 * In-code documentation/code cleanup
 * Bug fixes
