@@ -244,8 +244,9 @@
     <instance objName="obj_chest" x="288" y="352" name="inst_FE81A0CB" locked="0" code="contents = 7 //elixer&#xA;&#xA;message[2] = &quot;&quot;&#xA;message[3] = &quot;&quot;&#xA;message[4] = &quot;&quot;&#xA;message[5] = &quot;&quot;&#xA;message[6] = &quot;&quot;&#xA;message[7] = &quot;&quot;&#xA;message[8] = &quot;&quot;&#xA;message[9] = &quot;&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="320" y="352" name="inst_53162531" locked="0" code="contents = 12 // defense ring!!&#xA;&#xA;message[2] = &quot;&quot;&#xA;message[3] = &quot;&quot;&#xA;message[4] = &quot;&quot;&#xA;message[5] = &quot;&quot;&#xA;message[6] = &quot;&quot;&#xA;message[7] = &quot;&quot;&#xA;message[8] = &quot;&quot;&#xA;message[9] = &quot;&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="80" y="208" name="inst_EECD4DC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_newRoom" x="80" y="224" name="inst_64ADC961" locked="0" code="newRoom = rm_shop;&#xA;target_x = 80;&#xA;target_y = 240;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_newRoom" x="80" y="224" name="inst_64ADC961" locked="0" code="newRoom = rm_healer;&#xA;target_x = 80;&#xA;target_y = 240;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_newRoom" x="192" y="288" name="inst_67A75B02" locked="0" code="newRoom = rm_inn;&#xA;target_x = 192;&#xA;target_y = 304;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_newRoom" x="256" y="224" name="inst_543BB8C6" locked="0" code="newRoom = rm_shop;&#xA;target_x = 256;&#xA;target_y = 240;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_tiles" x="48" y="160" w="16" h="16" xo="240" yo="32" id="10001601" name="inst_85D510EC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

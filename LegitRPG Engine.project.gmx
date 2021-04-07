@@ -102,6 +102,7 @@
     <objects name="System">
       <object>objects\obj_shop</object>
       <object>objects\obj_inn</object>
+      <object>objects\obj_healer</object>
       <object>objects\obj_menu</object>
       <object>objects\obj_message</object>
       <object>objects\obj_interact</object>
@@ -113,15 +114,18 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_init</room>
-    <room>rooms\rm_title</room>
-    <room>rooms\rm_name</room>
+    <rooms name="System">
+      <room>rooms\rm_init</room>
+      <room>rooms\rm_title</room>
+      <room>rooms\rm_name</room>
+      <room>rooms\rm_battle</room>
+      <room>rooms\rm_shop</room>
+      <room>rooms\rm_healer</room>
+      <room>rooms\rm_menu</room>
+      <room>rooms\rm_inn</room>
+    </rooms>
     <room>rooms\rm_town</room>
     <room>rooms\rm_field</room>
-    <room>rooms\rm_battle</room>
-    <room>rooms\rm_menu</room>
-    <room>rooms\rm_shop</room>
-    <room>rooms\rm_inn</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
