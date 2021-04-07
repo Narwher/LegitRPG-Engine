@@ -38,13 +38,13 @@ Aims to include most mechanics and tropes from console-based role-playing games.
   * Player status
   * Save/Load functionality (only one file for now)
 * Item Shop (buy and sell)
+* Inn
 * Title screen and main menu
 * Character name entry
 * Gamepad support
 
 ## To Do:
 * Healer
-* Inn
 * The whole battle system (lol)
   * Status effects
   * Loot
