@@ -37,12 +37,12 @@ Aims to include most mechanics and tropes from console-based role-playing games.
   * Quit/Other menu questions
   * Player status
   * Save/Load functionality (only one file for now)
+* Item Shop (buy and sell)
 * Title screen and main menu
 * Character name entry
 * Gamepad support
 
 ## To Do:
-* Item Shop (buy and sell)
 * Healer
 * Inn
 * The whole battle system (lol)
