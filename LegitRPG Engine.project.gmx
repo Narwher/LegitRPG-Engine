@@ -38,6 +38,7 @@
     </sprites>
     <sprites name="System">
       <sprite>sprites\spr_window</sprite>
+      <sprite>sprites\spr_battleWindow</sprite>
       <sprite>sprites\spr_finger</sprite>
       <sprite>sprites\spr_red</sprite>
       <sprite>sprites\spr_blue</sprite>
@@ -86,7 +87,6 @@
     <object>objects\obj_init</object>
     <objects name="Battle">
       <object>objects\obj_battlecontroller</object>
-      <object>objects\object22</object>
       <object>objects\obj_p1battle</object>
       <object>objects\obj_p2battle</object>
       <object>objects\obj_p3battle</object>

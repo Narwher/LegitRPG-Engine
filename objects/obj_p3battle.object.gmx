@@ -45,6 +45,32 @@ res = global.res[3]
 status = global.status[3]
 name = global.name[3]
 player = 3
+
+if(global.weapon[3] != 0){
+    atk += global.item_atk[global.weapon[3]]
+    def += global.item_def[global.weapon[3]]
+    pow += global.item_pow[global.weapon[3]]
+    res += global.item_res[global.weapon[3]]
+    spd += global.item_spd[global.weapon[3]]
+}if(global.head[3] != 0){
+    atk += global.item_atk[global.head[3]]
+    def += global.item_def[global.head[3]]
+    pow += global.item_pow[global.head[3]]
+    res += global.item_res[global.head[3]]
+    spd += global.item_spd[global.head[3]]
+}if(global.armor[3] != 0){
+    atk += global.item_atk[global.armor[3]]
+    def += global.item_def[global.armor[3]]
+    pow += global.item_pow[global.armor[3]]
+    res += global.item_res[global.armor[3]]
+    spd += global.item_spd[global.armor[3]]
+}if(global.accs[3] != 0){
+    atk += global.item_atk[global.accs[3]]
+    def += global.item_def[global.accs[3]]
+    pow += global.item_pow[global.accs[3]]
+    res += global.item_res[global.accs[3]]
+    spd += global.item_spd[global.accs[3]]
+}
 </string>
           </argument>
         </arguments>

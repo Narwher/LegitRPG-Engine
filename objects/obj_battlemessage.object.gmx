@@ -58,6 +58,7 @@ cooldown = text_speed
           <argument>
             <kind>1</kind>
             <string>global.gameMove = true;
+if instance_exists(obj_battlecontroller){with obj_battlecontroller{canMove = true}}
 </string>
           </argument>
         </arguments>

@@ -25,14 +25,194 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>done = false
-p1wait = 0
-m1wait = 0
+            <string>/// Initialize 
 
-turnwait = false
+// player wait counters
+p1wait = 0;
+p2wait = 0;
+p3wait = 0;
 
-alarm[0] = 10
+// monster wait counters
+m1wait = 0;
+m2wait = 0;
+m3wait = 0;
+
+countDone = false;
+
+// status effect stacking counters
+p1statusCount = 1;
+p2statusCount = 2;
+p3statusCount = 2;
+m1statusCount = 1;
+m2statusCount = 1;
+m2statusCount = 1;
+
+// current state of battle
+state = "turnwait" // "turnwait", "p1", "p2", "p3", "m1", "m2", "m3"
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Battle Menus
+mainOption = 0;
+attackOption = 0;
+skillOption = 0;
+itemOption = 0;
+playerOption = 0;
+monsterOption = 0;
+
+cursor_x = 84;
+cursor_y = 190;
+
+canMove = false;
+
+lastMenu = "";
+targetMenu = "";
+currentMenu = "main" // "main", "skill", "item", "choosePlayer", "chooseMonster"
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Populate battleground
+enemyCount = choose(1,1,2,2,3)
+
+instance_create(130,390,obj_p1battle)
+
+if global.name[2] != ""{
+ instance_create(216,310,obj_p2battle) 
+}
+
+if global.name[3] != ""{
+ instance_create(240,410,obj_p3battle) 
+}
+
+if enemyCount == 1{
+    instance_create(488,384, obj_monster)
+}else if enemyCount == 2{
+    instance_create(488,384, obj_monster)
+    //instance_create(488,384, obj_monster2)
+}else if enemyCount == 3{
+    instance_create(488,384, obj_monster)
+    //instance_create(488,384, obj_monster2)
+    //instance_create(488,384, obj_monster3)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Begin Battle</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>drawBattleMessage</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>"Monster appeared!!!"</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>40</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -77,8 +257,78 @@ alarm[0] = 10
             <string>/// return to field
 global.gameMove = true;
 
-transition_kind = 5;
 room_goto(global.field_room);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// 'Run'
+instance_destroy();
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Game Over</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_end()
+
 
 </string>
           </argument>
@@ -88,26 +338,6 @@ room_goto(global.field_room);
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>Restart Cycle</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -122,8 +352,9 @@ room_goto(global.field_room);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>turnwait = false
-
+            <string>/// reset input
+canMove = true;
+if instance_exists(obj_message){with obj_message{instance_destroy()}}
 </string>
           </argument>
         </arguments>
@@ -132,26 +363,6 @@ room_goto(global.field_room);
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>"Monster appeared"</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -166,49 +377,9 @@ room_goto(global.field_room);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//instance_create(0,0, obj_battlemessage);
-//obj_battlemessage.text = "Monster appeared!!!";
+            <string>/// Start battle counter
+event_user(0);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>drawBattleMessage</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>"Monster appeared!!!"</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -230,7 +401,7 @@ room_goto(global.field_room);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Battle Logic</string>
+            <string>Battle Counter/Checks</string>
           </argument>
         </arguments>
       </action>
@@ -290,51 +461,50 @@ room_goto(global.field_room);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Battle logic
-/*
-// Decrease wait counters
-p1wait += obj_p1battle.spd
-m1wait += max(obj_monster.spd,5)
-
-// If needed, take action:
-    if(p1wait &gt; 99){
-        p1wait = 0
-        player_attack(1,obj_battleplayer,user)
+            <string>/// See if HP of either team is zero
+if(obj_p1battle.hp &lt; 1){
+    with obj_battle image_index = 4
+    drawBattleMessage(global.name[1] +" and friends have fallen...")
+    alarm[0] = 20;
+}
+else if(obj_monster.hp &lt; 1){
+    global.xp[1] += obj_monster.xploot
+    with obj_monster visible = false
+    global.money += user.gloot
+    drawBattleMessage("You felled " + obj_monster.name + "!#Get " + string(obj_monster.xploot) + "XP!#Get " + string(obj_monster.gloot) + " Gil!#Victory!")
+    sound_loop(snd_dungeontheme)
+    done = true
+    with obj_monster instance_destroy()
+    with obj_p1battle instance_change(obj_player,true)
+    exit
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Debug commands
+if global.debug{
+    if select{
+        // end battle
+        instance_destroy();
     }
-    else if(m1wait &gt; 99){
-        m1wait = 0
-        monster_attack(1)   
-    }
-    else{
-        turnwait = true
-    }
-    //See if HP of either team is zero
-    if(obj_battleplayer.hp &lt; 1){
-        with obj_battleplayer image_index = 4
-        screen_redraw()
-        sound_loop(snd_partyperished)
-        draw_message("The party of " + global.name[1] + " has#perished...##-Game Over-")
-        game_end()
-        done = true
-        turnwait = false
-        exit
-    }
-    else if(user.hp &lt; 1){
-        global.xp[1] += user.xploot
-        with user visible = false
-        screen_redraw()
-        score += user.gloot
-        sound_play(snd_victory)
-        draw_message("You felled " + user.name + "!#Get " + string(user.xploot) + "XP!#Get " + string(user.gloot) + " Gil!#Victory!")
-        sound_loop(snd_dungeontheme)
-        done = true
-        with user instance_destroy()
-        with obj_battleplayer instance_change(obj_player,true)
-        exit
-    }
-    if not(turnwait){
-        draw_battleData()
-    }
+}
 </string>
           </argument>
         </arguments>
@@ -355,7 +525,7 @@ m1wait += max(obj_monster.spd,5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Debug</string>
+            <string>Menus</string>
           </argument>
         </arguments>
       </action>
@@ -375,12 +545,177 @@ m1wait += max(obj_monster.spd,5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.debug{
-    if select{
-        // end battle
-        instance_destroy();
+            <string>/// Cant mvoe if message open
+if instance_exists(obj_battlemessage){canMove = false;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// navigate options
+if down &amp;&amp; canMove{
+    if currentMenu == "main" &amp;&amp; mainOption &lt; 3{
+        cursor_y += 16;
+        mainOption++;
+        canMove = false;
+        alarm[1] = 5;
+    }else if currentMenu == "skill" &amp;&amp; skillOption &lt; 3{
+        cursor_y += 16;
+        skillOption++;
+        canMove = false;
+        alarm[1] = 5;
+    }else if currentMenu == "item" &amp;&amp; itemOption &lt; 64{
+        itemOption++;
+        canMove = false;
+        alarm[1] = 5;
+    }
+}else if up &amp;&amp; canMove{
+    if currentMenu == "main" &amp;&amp; mainOption &gt;0{
+        cursor_y -= 16;
+        mainOption--;
+        canMove = false;
+        alarm[1] = 5;
+    }else if currentMenu == "skill" &amp;&amp; skillOption &gt;0{
+        cursor_y -= 16;
+        skillOption--;
+        canMove = false;
+        alarm[1] = 5;
+    }else if currentMenu == "item" &amp;&amp; itemOption &gt; 0{
+        itemOption--;
+        canMove = false;
+        alarm[1] = 5;
     }
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// select options
+if a &amp;&amp; canMove{
+    if currentMenu == "main"{
+        if mainOption == 0{
+            canMove = false
+            drawBattleMessage("Attacked!!");
+        }else if mainOption == 1{
+            cursor_y = 190;
+            skillOption = 0;
+            currentMenu = "skill";
+            canMove = false;
+            alarm[1] = 5;  
+        }else if mainOption == 2{
+            cursor_y = 190;
+            itemOption = 0;
+            currentMenu = "item";
+            canMove = false;
+            alarm[1] = 5;  
+        }else if mainOption == 3 {
+            canMove = false;
+            chance = choose(1,1,1,0,0)
+            if chance == 1 {
+                drawBattleMessage("Ran away successfully!")
+                alarm[3] = 30;
+            }else if chance == 0{
+                drawBattleMessage("Couldn't run!")
+                alarm[1] = 30
+            }      
+        }
+    }
+}else if b &amp;&amp; canMove{
+    if currentMenu == "skill" || currentMenu == "item"{
+        cursor_y = 190;
+        mainOption = 0;
+        canMove = false;
+        alarm[1] = 5;
+        currentMenu = "main"
+    }  
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Battle turn  
+do{
+    p1wait += global.spd[1];
+    p2wait += global.spd[2];
+    p3wait += global.spd[3];
+    m1wait += obj_monster.spd
+    
+    // Decide who goes
+    if(p2wait &gt; 99){
+        p2wait = 0
+        countDone = true;
+        canMove = true;
+        state  = "p2"
+    }else if(p1wait &gt; 99){
+        p1wait = 0
+        countDone = true;
+        canMove = true;
+        state  = "p1"
+    }else if(p3wait &gt; 99){
+        p3wait = 0
+        countDone = true;
+        canMove = true;
+        state  = "p3"
+    }
+    else if(m1wait &gt; 99){
+        m1wait = 0
+        countDone = true;
+        state = "m1"   
+    }
+    else{
+        state = "turnwait";
+    }
+}until countDone
 </string>
           </argument>
         </arguments>
@@ -403,22 +738,102 @@ m1wait += max(obj_monster.spd,5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_stretched(spr_window,0,0,172,480,100)
+            <string>/// Draw Battle menus
+
+// main window
+draw_sprite_stretched(spr_battleWindow,0,0,172,480,100)
 
 draw_set_color(c_white)
 draw_set_font(fnt_message)
 
-draw_text(32,186, global.name[1])
-draw_text(32,208, global.name[2])
-draw_text(32,232, global.name[3])
+draw_text(264,186, global.name[1])
+draw_text(264,208, global.name[2])
+draw_text(264,232, global.name[3])
 
-draw_text(86,186, string(obj_p1battle.hp)+ " Hp")
-draw_text(86,208, string(obj_p2battle.hp)+ " Hp")
-draw_text(86,232, string(obj_p3battle.hp)+ " Hp")
+draw_text(328,186, string(obj_p1battle.hp)+ " Hp")
+draw_text(328,208, string(obj_p2battle.hp)+ " Hp")
+draw_text(328,232, string(obj_p3battle.hp)+ " Hp")
 
-draw_text(150,186, string(obj_p1battle.mp)+ " Mp")
-draw_text(150,208, string(obj_p2battle.mp)+ " Mp")
-draw_text(150,232, string(obj_p3battle.mp)+ " Mp")
+draw_text(392,186, string(obj_p1battle.mp)+ " Mp")
+draw_text(392,208, string(obj_p2battle.mp)+ " Mp")
+draw_text(392,232, string(obj_p3battle.mp)+ " Mp")
+
+if state == "turnwait" || state == "m1" || state == "m2" || state == "m3"{}
+//show nothing
+
+else{
+    if state == "p1"{draw_text(40,184,"("+global.name[1]+")"); draw_sprite_ext(spr_downarrow,0,obj_p1battle.x+16,obj_p1battle.y-8,2,2,image_angle,image_blend,image_alpha);}
+    else if state == "p2"{draw_text(40,184,"("+global.name[2]+")"); draw_sprite_ext(spr_downarrow,0,obj_p2battle.x+16,obj_p2battle.y-8,2,2,image_angle,image_blend,image_alpha);}
+    else if state == "p3"{draw_text(40,184,"("+global.name[3]+")"); draw_sprite_ext(spr_downarrow,0,obj_p3battle.x+16,obj_p3battle.y-8,2,2,image_angle,image_blend,image_alpha);}
+ 
+    if currentMenu == "main"{
+        draw_sprite_ext(spr_finger,0,cursor_x,cursor_y,.5,.5,image_angle,image_blend,image_alpha);
+        
+        draw_text(96,186, "Attack")
+        draw_text(96,202, "Skill")
+        draw_text(96,218, "Item")  
+        draw_text(96,234, "Run")
+    }else if currentMenu == "skill"{
+        draw_sprite_ext(spr_finger,0,cursor_x,cursor_y,.5,.5,image_angle,image_blend,image_alpha);
+        
+        if state == "p1"{
+            draw_text(96,186, global.skill_name[global.skill[1,0]])
+            draw_text(96,202, global.skill_name[global.skill[1,1]])
+            draw_text(96,218, global.skill_name[global.skill[1,2]])  
+            draw_text(96,234, global.skill_name[global.skill[1,3]])
+        }else if state == "p2"{
+            draw_text(96,186, global.skill_name[global.skill[2,0]])
+            draw_text(96,202, global.skill_name[global.skill[2,1]])
+            draw_text(96,218, global.skill_name[global.skill[2,2]])  
+            draw_text(96,234, global.skill_name[global.skill[2,3]])
+        }else if state == "p3"{
+            draw_text(96,186, global.skill_name[global.skill[3,0]])
+            draw_text(96,202, global.skill_name[global.skill[3,1]])
+            draw_text(96,218, global.skill_name[global.skill[3,2]])  
+            draw_text(96,234, global.skill_name[global.skill[3,3]])
+            
+        }  
+    }else if currentMenu == "item"{
+        draw_sprite_ext(spr_finger,0,cursor_x,cursor_y,.5,.5,image_angle,image_blend,image_alpha);
+        
+        draw_text(96,186, global.item_name[global.item[itemOption]])
+        draw_text(96,202, global.item_name[global.item[itemOption + 1]])
+        draw_text(96,218, global.item_name[global.item[itemOption + 2]])  
+        draw_text(96,234, global.item_name[global.item[itemOption + 3]])  
+    }          
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// debug
+//draw_text(8,8,state)
+//draw_text(8,16,"p1wait: " + string(p1wait))
+//draw_text(8,24,"p2wait" + string(p2wait))
+//draw_text(8,32,"p3wait" + string(p3wait))
+
+// Draw ATB bar(s)
+//draw_healthbar(264, 188, 400, 192, p1wait, c_black, c_red, c_lime, 0, true, true)
+//draw_healthbar(264, 210, 400, 214, p2wait, c_black, c_red, c_lime, 0, true, true)
+//draw_healthbar(264, 234, 400, 238, p3wait, c_black, c_red, c_lime, 0, true, true)
+
+
 </string>
           </argument>
         </arguments>
